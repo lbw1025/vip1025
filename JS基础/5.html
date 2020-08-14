@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time">
+            倒计时
+        <button id="button1">开始</button>
+        <button id="button1">停止</button>
+    </div>
+    <script>
+        var timer = document .getElementById("time")
+        timer.style.height = "400px";
+        timer.style.width = "400px";
+        timer.style.backgroundColor = "red";
+        timer.style.fontSize="30px";
+        timer.style.textAlign="center";
+        timer.style.lineHeight="200px";
+
+        var buttontime=document .getElementById("button1")
+        buttontime.style.float="left";
+        var i = 10;
+    var timer = setInterval(function(){
+      console.log(i);
+      i--;
+      if(i==0){
+        clearInterval(timer)
+      }
+    },1000)
+
+    </script>
+</body>
+</html>

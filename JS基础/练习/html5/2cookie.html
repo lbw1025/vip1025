@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // document.cookie = "userage = 15 ; expires="+timer.toUTCString();
+        // document.cookie = "username = LiMing";
+        // document.cookie = "userage = 18";
+
+        // 设置cookie
+        function setCookie(key, value, expires) {
+            var timer = new Date();
+            timer.setDate(timer.getDate() + expires);
+            document.cookie = key + "=" + value + ";expires = " + timer.toUTCString();
+        }
+        function getCookie(key) {
+            var _cookie = document.cookie;
+            _cookie = _cookie.split(";");
+            console.log(_cookie);
+            for (var i = 0; i < _cookie.length; i++) {
+                var keyCookie = _cookie[i].split("=");
+                if (key == keyCookie[0].trim())
+                    console.log(keyCookie[1])
+            }
+        }
+        function delCookie(key) {
+            var timer = new Date();
+            timer.setDate(timer.getDate() - 1);
+            document.cookie = key + "= null" + ";expires = " + timer.toUTCString();
+
+        }
+        setCookie("username", "xiaokiki", 1);
+        getCookie("username");
+        delCookie("username");
+    </script>
+</body>
+
+</html>

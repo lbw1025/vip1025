@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .img-text {
+            height: 400px;
+            width: 400px;
+            border: 1px solid black;
+            position: relative;
+            float: left;
+            margin-right: 20px;
+            overflow: hidden;
+
+        }
+
+        .img-text img {
+            height: 400px;
+            width: 400px;
+        }
+
+        .img-text2 img {
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .img-text2 {
+            height: 400px;
+            width: 400px;
+            overflow: hidden;
+            float: left;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .img-text .text {
+            height: 200px;
+            width: 200px;
+            background-color: rgba(255, 55, 255, 0.3);
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+        <div class="img-text">
+            <img src="../IMG/slider1.jpg" alt="">
+            <div class="text"> </div>
+        </div>
+        <div class="img-text2">
+            <img id="big-img" src="../IMG/slider1.jpg" alt="">
+        </div>
+
+    <script>
+        var oText = document.getElementsByClassName("text")[0];
+        var imgText = document.getElementsByClassName("img-text")[0];
+        var bigImg = document.getElementById("big-img");
+        imgText.onmousemove = function (event) {
+            var moveTop =  event.clientY - 100;
+            var moveLeft =  event.clientX - 100;
+            if(moveTop>200)
+            {
+                moveTop=200
+            }
+            if(moveLeft>200)
+            {
+                moveLeft=200
+            }
+            if(moveTop<0)
+            {
+                moveTop=0
+            }
+            if(moveLeft<0)
+            {
+                moveLeft=0
+            }
+            bigImg.style.top = moveTop*-2 +"px";
+            bigImg.style.left = moveLeft*-2 +"px";
+            oText.style.left = moveLeft  + "px";
+            oText.style.top = moveTop + "px";
+        }
+    </script>
+</body>
+
+</html>

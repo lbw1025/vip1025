@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            float: left;
+            margin: 16px;
+            padding: 4px;
+            background-color: #e7e7e7;
+            box-shadow: inset 0 5px white, inset 0 -5px #bbb, inset 5px 0 #d7d7d7, inset -5px 0 #d7d7d7;
+            width: 104px;
+            height: 104px;
+            border-radius: 10%;
+            display: flex;
+
+        }
+        .box span{
+            display: block;
+            width: 24px;
+            height: 24px;
+            background-color: #333;
+            border-radius: 50%;
+            margin: 4px;
+            display: flex;
+        }
+        .num1:first-child{
+            justify-content: center;
+            align-items: center;
+        }
+        .num2{
+            justify-content: space-between;
+        }
+        .num2 span:last-child{
+            align-self: flex-end;
+        }
+        .num3{
+            justify-content: space-between;
+        }
+        .num3 span:nth-child(2){
+            align-self: center;
+        }
+        .num3 span:last-child{
+            align-self: flex-end;
+        }
+        .num4{
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+        .num4 .row{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+      
+        }
+        .num5{
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+        .num5 .row{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+      
+        }
+        .num5 .row:nth-child(2){
+            justify-content: center;
+      
+        }
+        .num6{
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="box num1">
+        <span> </span>
+    </div>
+    <div class="box num2">
+        <span> </span>
+        <span> </span>
+    </div>
+    <div class="box num3">
+        <span> </span>
+        <span> </span>
+        <span> </span>
+    </div>
+    <div class="box num4">
+        <div class="row">
+            <span> </span>
+            <span> </span>
+        </div>
+        <div class="row">
+            <span> </span>
+            <span> </span>
+        </div>  
+    </div>
+    <div class="box num5">
+        <div class="row">
+            <span> </span>
+            <span> </span>
+        </div>
+        <div class="row">
+            <span></span>
+        </div>
+        <div class="row">
+            <span> </span>
+            <span> </span>
+        </div>
+       
+    </div>
+    <div class="box num6">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

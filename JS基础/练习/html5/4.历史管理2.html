@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box div {
+            height: 100px;
+            width: 400px;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            text-align: center;
+            float: left;
+            margin: 10px 20px;
+        }
+
+        .box .active {
+            background-color: gray;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box-num">12</div>
+        <div class="box-num">22</div>
+        <div class="box-num">32</div>
+    </div>
+
+    <script>
+        var boxNum = document.querySelectorAll(".box-num")
+        for (var i = 0; i < boxNum.length; i++) {
+            boxNum[i].index = i;
+            boxNum[i].onclick = function () {
+                nowi = this.index
+                for (var j = 0; j < boxNum.length; j++) {
+                    boxNum[j].classList.remove("active")
+                }
+                boxNum[this.index].classList.add("active");
+                location.hash = boxNum[this.index].innerHTML;
+
+
+
+
+                }
+            }
+        
+
+        window.onhashchange = function () {
+                    var _hash = location.hash.slice(1);
+                    //  var _hash =nowi
+                    console.log(_hash)
+                    for (var i = 0; i < boxNum.length; i++) {
+                        if (boxNum[i].innerText == _hash) {
+                            boxNum[i].classList.add("active");
+                        }else{
+                            boxNum[i].classList.remove("active");
+                        }
+                    }
+
+                    //  for(var j=0 ;j<boxNum.length;j++){
+                    //  boxNum[j].classList.remove("active")
+                    //  }
+                    //  boxNum[_hash].classList.add("active");
+                    // }
+        }
+
+        // window.onhashchange = function () {
+        //     var _hash = location.hash.slice(1);
+        //     //  var _hash =nowi
+        //     console.log(_hash)
+        //     for (var i = 0; i < boxNum.length; i++) {
+        //         if (boxNum[i].innerText == _hash) {
+        //             boxNum[i].classList.add("active");
+        //         } else {
+        //             boxNum[i].classList.remove("active")
+        //         }
+
+        //     }
+        // }
+        // }
+
+    </script>
+</body>
+
+</html>

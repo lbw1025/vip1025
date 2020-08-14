@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    
+            perspective: 1000px;
+        }
+        .box{
+            height: 400px;
+            width: 400px;
+            border: 2px dashed black;
+            position: relative;
+        }
+        .text1{
+            height: 400px;
+            width: 400px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 3s ease;
+           transform-style: preserve-3d;
+        }
+        .text2{
+            transform:rotateY(180deg) translateZ(8px);
+            height: 400px;
+            width: 400px;
+            background-color: blue;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .text1:hover{
+            transform: rotateY(180deg);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="text1">中国
+            <div class="text2">加油</div>
+        </div>
+    </div>
+
+    <script>
+        var oText1 = document.querySelector(".text1");
+        var oText2 = document.querySelector(".text2");
+    </script>
+</body>
+</html>

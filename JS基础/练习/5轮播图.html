@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        body{
+            background-color: black;
+        }
+        .box{
+            height: 170px;
+            width: 490px;
+            margin: 100px auto;
+            border: 6px solid white;
+            position: relative;
+        }
+        .img-content .img-list{
+            display: none;
+        }
+        .img-content .active{
+            display: block;
+        }
+        .btn-content{
+             position: absolute;
+             bottom: 10px;
+             width: 100%;
+        }
+        .btn-content  li{
+            float: left;
+            height: 20px;
+            width: 20px;
+            background-color: #f90;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            margin-left: 5px;
+            color: #fff;
+        }
+        .btn-content .right-btn {
+            float: right;
+        }
+       .right-btn .active{
+           background-color: red;
+       }
+       .displays{
+           display: none;
+       }
+      .left-btn .active{
+           background-color: red;
+       }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div class="img-content">
+            <ul>
+                <li class="active img-list"><img src="./img/01.jpg" alt=""></li>
+                <li class="img-list"><img src="./img/02.jpg" alt=""></li>
+                <li class="img-list"><img src="./img/03.jpg" alt=""></li>
+                <li class="img-list"><img src="./img/04.jpg" alt=""></li>
+                <li class="img-list"><img src="./img/05.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="btn-content">
+            <div class="left-btn">
+                <ul>
+                    <li class="arr-btn">&lt;</li>
+                    <li class="arr-btn">&gt;</li>
+                </ul>
+            </div>
+            <div class="right-btn">
+                    <ul>
+                        <li class="num-btn active">1</li>
+                        <li class="num-btn">2</li>
+                        <li class="num-btn">3</li>
+                        <li class="num-btn">4</li>
+                        <li class="num-btn">5</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var numBtn =document.getElementsByClassName("num-btn");
+        var imgList =document.getElementsByClassName("img-list");
+        var arrBtn = document.getElementsByClassName("arr-btn");
+        var oBox = document.getElementsByClassName("box")[0];
+        var nowIndex = 0;
+        var timer;
+
+        // 切换指定图片
+        function changeImage(index){
+            for(var j=0;j<numBtn.length;j++){
+                    numBtn[j].classList.remove("active");
+                    imgList[j].classList.remove("active");
+                }
+                numBtn[index].classList.add("active");
+                imgList[index].classList.add("active")
+                nowIndex =index;
+            }
+
+        for(var i=0;i<numBtn.length;i++)
+        {
+            numBtn[i].index = i;
+            numBtn[i].onmouseover=function(){
+                // for(var j=0;j<numBtn.length;j++){
+                //     numBtn[j].classList.remove("active");
+                //     imgList[j].classList.remove("active");
+                //     // imgList[j].classList.add("img-list");
+                // }
+                // numBtn[this.index].classList.add("active");
+                // imgList[this.index].classList.add("active")
+                // nowIndex =this.index;
+                changeImage(this.index)
+            }
+        }
+
+        //    右
+        arrBtn[1].onclick =function(){
+            var nextIndex= ++nowIndex;
+            if(nextIndex==5){
+                nextIndex=0;
+            }
+            changeImage(nextIndex);
+            // for(var j=0;j<numBtn.length;j++){
+            //         numBtn[j].classList.remove("active");
+            //         imgList[j].classList.remove("active");
+            //         // arrBtn[0].classList.remove("active")
+                 
+            //     }
+            //     arrBtn[1].classList.add("active")
+            //     numBtn[nextIndex].classList.add("active")
+            //     imgList[nextIndex].classList.add("active")
+            
+        }
+        //     左
+        arrBtn[0].onclick =function(){
+            var nextIndex= --nowIndex;
+            if(nextIndex==-1){
+                nextIndex=4;
+            }
+            changeImage(nextIndex);
+            // for(var j=0;j<numBtn.length;j++){
+            //         numBtn[j].classList.remove("active");
+            //         imgList[j].classList.remove("active");
+            //         arrBtn[1].classList.remove("active")
+            //     }
+            //     numBtn[nextIndex].classList.add("active")
+            //     imgList[nextIndex].classList.add("active")
+            //     arrBtn[0].classList.add("active")
+        }
+
+        // 动画
+        function run(){
+            timer = setInterval(function() {
+                arrBtn[1].onclick();
+                // var nextIndex = (++nowIndex)%5;
+                //  changeImage(nextIndex);
+            }, 1000);
+        }
+    run();
+    // 鼠标移入
+    oBox.onmouseover = function(){
+        clearInterval(timer);
+    }
+    oBox.onmouseout = function(){
+        run();
+    }
+    </script>
+</body>
+</html>

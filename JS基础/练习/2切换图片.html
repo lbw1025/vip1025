@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .box{
+            width: 600px;
+            border: 1px solid black;
+            margin: 0 auto;
+           margin-top: 100px;
+        }
+        .box .big-p{
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+        .box .big-p img{
+            width: 400px;
+        }
+        .box .small-p li{
+            float: left;
+            list-style: none;
+            border-left: 1px solid  black;
+            width: 24.5%;
+            text-align: center;
+        }
+        .box .small-p li:first-child{
+            border-left: none;
+        }
+        .box .small-p img{
+            width: 120px;
+        }
+
+    </style>
+</head>
+<body>
+      <div class="box  clearfix">
+        <div class="big-p">
+            <img id="big-p" src="../练习/img/slider1.jpg" alt="">
+        </div>
+         <div class="small-p">
+             <ul>
+                <li><img src="../练习/img/slider1.jpg" alt=""></li>
+                <li><img src="../练习/img/slider2.jpg" alt=""></li>
+                <li><img src="../练习/img/slider3.jpg" alt=""></li>
+                <li><img src="../练习/img/slider4.jpg" alt=""></li>
+            </ul>
+         </div>
+        </div>
+
+
+      <script>
+          var oBigimg = document.getElementById("big-p");
+          var oSmallimg = document.getElementsByClassName("small-p")[0];
+          var imgArr = oSmallimg.getElementsByTagName("img");
+
+
+          for(var i = 0;i<imgArr.length;i++){
+              imgArr[i].onmouseover = function(){
+                var imgTs = this.getAttribute("src");
+                oBigimg.setAttribute("src",imgTs)
+             }
+          }
+      </script>
+
+</body>
+</html>

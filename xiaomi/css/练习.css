@@ -1,0 +1,136 @@
+.tittle{
+    height: 40px;
+    line-height: 40px;
+    background-color:#333;
+}
+.label a{
+    color:#b0b0b0 ;
+    padding:0 8px; 
+    border-left: 1px solid #424242;
+}
+.label a:hover{
+    color: white;
+}
+.first-label a{
+    padding-left: 0;
+    border-left: none ;
+}
+.tittle .tittle-left{
+    float: left;
+}
+.tittle .tittle-right{
+    float: right;
+}
+.tittle-left .label{
+    float: left;
+}
+.tittle-right .label{
+    float: left;
+}
+.tittle-right .car{
+    float: left;
+    /* height: 40px ;
+    width: 120px;
+    background-color: #424242; */
+    text-align: center;
+    color: #b0b0b0;
+   
+}
+.car{
+    height: 40px ;
+    width: 120px;
+    position: relative;
+    background-color: #424242;
+    right:0;
+    top:0;
+}
+
+.shopping-list{
+    /* height:100px; */
+    width: 320px;
+    background-color:white;
+    box-shadow: 0 0 1px 1px rgba(0,0,0,0.5);
+    position: absolute;
+    color: black;
+    right: 0px;
+    top:40px ;
+    line-height: 100px;
+    /* display: none; */
+    height: 0px;
+    overflow: hidden;
+    transition: height  0.5s ease;
+}
+.car:hover .shopping-list{
+    /* display: block; */
+    height: 100px;
+    
+        
+}
+.shopping-car:hover{
+    color: orangered;
+    background-color: white;
+}
+.menu{
+    height: 100px;
+    
+    
+}
+.logo-menu{
+    height: 55px;
+    width: 55px;
+    background-color: #ff6701;
+    float: left;
+    margin-top: 22px;
+    text-align: center;
+   
+}
+.list{
+    margin-left: 175px;
+    float: left;
+}
+.list-line{
+    float: left;
+    line-height: 100px;
+      
+}
+.list-line a{
+    color: #333333;
+    font-size: 16px;
+    padding: 0 11px;
+
+}
+.list-line a:hover{
+    color: orangered;
+}
+.search-menu{
+    float: right;
+    margin-top: 22px;
+    width: 296px;
+    height: 50px;
+    border: 1px solid  #e0e0e0;
+}
+.search-menu input{
+    width: 242px;
+    height: 50px;
+    border: none;
+    float: left;
+    outline: none;
+    text-indent: 10px;
+    
+}
+.search-menu button{
+    width: 54px;
+    height: 50px;
+    float: left;
+    border: none;
+    border-left: 1px solid #e0e0e0;
+    background: none;
+}
+.search-menu .icon-sousuo{
+    color: #616161;
+    font-weight: bold;
+
+}
+
+
+
