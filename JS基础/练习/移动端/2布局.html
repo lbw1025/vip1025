@@ -1,62 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container{
-            text-align: center;
+        * {
+            margin: 0;
+        }
+
+        .container {
             max-width: 960px;
             margin: 0 auto;
         }
-        .container header,nav,footer{
+
+        .container header,
+        nav,
+        footer {
             height: 100px;
             font-size: 45px;
             background-color: #999;
+            color: black;
             text-align: center;
             line-height: 100px;
             margin-bottom: 10px;
         }
-        .container img{
+
+        .container img {
             width: 100%;
         }
-        .content{
+
+        .content {
             height: 300px;
             margin-bottom: 10px;
         }
-        .content aside{
+
+        aside {
             height: 300px;
             width: 35%;
             background-color: red;
             float: right;
-            text-align: center;
         }
-        .content article{
+
+        article {
             width: 60%;
             height: 300px;
             background-color: blue;
             float: left;
-            text-align: center;  
         }
-     @media(max-width :600px){
-        article,aside{
-            width: 100%;
+
+        article,
+        aside {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-     }
+
+        @media (max-width:600px) {
+
+            article,
+            aside {
+                width: 100%;
+            }
+
+            article {
+                margin-bottom: 10px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>页头</header>
         <nav>导航</nav>
         <div class="img"><img src="../img/01_s.jpg" alt=""></div>
         <div class="content">
-            <article></article>
-            <aside></aside>
+            <article>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut,
+                    rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat.
+                    Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.</p>
+            </article>
+            <aside>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut,
+                    rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat.
+                    Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.</p>
+            </aside>
         </div>
         <footer>页脚</footer>
     </div>
 
 </body>
+
 </html>
