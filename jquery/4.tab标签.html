@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            height: 300px;
+            width: 500px;
+            border: 1px solid black;
+            margin: 100px  auto;
+        }
+        .box .nav li{
+            float: left;
+            width: 100px;
+            list-style: none;
+            color: white;
+            font-size: 14px;
+        
+        }
+        .box .nav{
+            height: 40px;
+            background-color: black;
+            text-align: center;
+            line-height: 40px;
+        }
+        .box .nav .active{
+            background-color: #ddd;
+            color: black;
+        }
+        .concent{
+            display: none;
+        }
+        .text .active{
+            display: block;
+        }
+        .shou{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+      
+    <div class="box">
+        <div class="nav">
+            <ul>
+                <li class="active">第一节课</li>
+                <li>第二节课</li>
+                <li>第三节课</li>
+            </ul>
+        </div>
+
+        <div class="text">
+            <div class="concent  active">
+                <h1>第一节课内容</h1>
+                <h1>第一节课内容</h1>
+                <h1>第一节课内容</h1>
+            </div>
+            <div class="concent">
+                <h1>第二节课内容</h1>
+                <h1>第二节课内容</h1>
+                <h1>第二节课内容</h1>
+            </div>
+            <div class="concent">
+                <h1>第三节课内容</h1>
+                <h1>第三节课内容</h1>
+                <h1>第三节课内容</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(".box").addClass("shou");
+        $(".nav li").on("mousemove",function(){
+            $(this).addClass("active").siblings(this).removeClass("active");
+            $(".concent").eq( $(this).index() ).addClass("active").siblings(this).removeClass("active")
+        })
+    </script>
+</body>
+</html>
