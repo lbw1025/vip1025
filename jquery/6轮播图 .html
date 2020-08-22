@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .box {
+            height: 170px;
+            width: 490px;
+            margin: 100px auto;
+            border: 6px solid white;
+            position: relative;
+
+        }
+
+        .img-content .img-list {
+            display: none;
+        }
+
+        .img-content .active {
+            display: block;
+        }
+
+        .btn-content {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .btn-content li {
+            float: left;
+            height: 20px;
+            width: 20px;
+            background-color: #f90;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            margin-left: 5px;
+            color: #fff;
+        }
+
+        .btn-content .right-btn {
+            float: right;
+        }
+
+        .right-btn .active {
+            background-color: red;
+        }
+
+        .displays {
+            display: none;
+        }
+
+        .left-btn .active {
+            background-color: red;
+        }
+
+        .xx {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="img-content">
+            <ul>
+                <li class="active img-list"><img src="./img/01.jpg" alt=""></li>
+                <li class="img-list"><img src="./img/02.jpg" alt=""></li>
+                <li class="img-list"><img src="./img/03.jpg" alt=""></li>
+                <li class="img-list"><img src="./img/04.jpg" alt=""></li>
+                <li class="img-list"><img src="./img/05.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="btn-content">
+            <div class="left-btn">
+                <ul>
+                    <li class="arr-btn" id="prex">&lt;</li>
+                    <li class="arr-btn" id="next">&gt;</li>
+                </ul>
+            </div>
+            <div class="right-btn">
+                <ul>
+                    <li class="num-btn active">1</li>
+                    <li class="num-btn">2</li>
+                    <li class="num-btn">3</li>
+                    <li class="num-btn">4</li>
+                    <li class="num-btn">5</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        var iNow = 0;
+        var timer;
+        $(".box").addClass("xx");
+        $(".num-btn").on("mousemove", function () {
+           change($(this).index())
+            iNow = $(this).index();
+        })
+
+
+        $("#prex").on("click", function () {
+            iNow--;
+            if (iNow == -1) {
+                iNow = 4;
+            }
+            change(iNow);
+            $("#prex").addClass("active");
+
+        })
+
+        $("#next").on("click", function () {
+            iNow++;
+            if (iNow == 5) {
+                iNow = 0;
+            }
+           change(iNow);
+           $("#next").addClass("active");
+
+        })
+
+
+        $(".arr-btn").on("mouseout",function(){
+            $(".arr-btn").removeClass("active");
+        })
+        function change(index){
+            $(".num-btn").eq(index).addClass("active").siblings().removeClass("active");
+            $(".img-list").eq(index).addClass("active").siblings().removeClass("active");
+        }
+        timer = setInterval(function () {
+            $("#next").trigger("click")
+        }, 2000)
+
+
+        $(".box").on("mousemove", function () {
+            clearInterval(timer);
+
+        })
+        $(".box").on("mouseout", function () {
+            timer = setInterval(function () {
+                $("#next").trigger("click")
+            }, 2000)
+        })
+    </script>
+</body>
+
+</html>
