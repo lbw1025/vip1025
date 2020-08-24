@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        position: absolute;
+    }
+</style>
+
+<body>
+    <script>
+
+        // 获取屏幕宽度
+        var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+        var oHeight = document.body.clientHeight || document.documentElement.clientHeight;
+
+
+        // 树叶
+        function Leaf() {
+            this.width = Math.random() * 50 + 100;
+            this.left = Math.random() * (oWidth - this.width);
+            this.top = 0;
+            var oImg = new Image();
+            oImg.src = "img/" + (Math.floor(Math.random() * 4) + 1) + ".png"  //1-4随机选一个图 
+            oImg.style.width = this.width + "px";
+            oImg.style.left = this.left + "px";
+            oImg.style.top = this.top + "px";
+            this.img = oImg
+        }
+
+
+
+        Leaf.prototype.init = function () {
+            document.body.appendChild(this.img);
+        }
+        Leaf.prototype.float = function () {
+            var _this = this;
+            setTimeout(function(){
+                _this.timer =setInterval(function () {
+                if (_this.img.offsetTop >= oHeight - _this.img.offsetHeight) {
+                        clearInterval(_this.timer);
+                }else{
+                    _this.img.style.top = _this.img.offsetTop + 5 + "px";
+                }
+            }, 10)
+            },Math.random()*600)
+   
+        }
+        var leafs = []
+        for (var i = 0; i < 10; i++) {
+            var leaf1 = new Leaf()
+            leafs.push(leaf1)
+            leaf1.init();
+        }
+
+        document.onclick = function () {
+            for (var j = 0; j < leafs.length; j++) {
+                leafs[j].float();
+            }
+        }
+    </script>
+</body>
+
+</html>
