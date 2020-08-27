@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.eat = function(){
+            console.log(this.name+"正在吃文霸霸紫黑色")
+        }
+        var xx = new Person("汤子康",21);
+        console.log(xx);
+        xx.eat();
+
+
+
+        function Coder(name,age){
+            Person.call(this,name,age)
+        }
+        Coder.prototype =  new Person
+        Coder.prototype.constructor = Coder;
+        var c1 = new Coder("文霸霸",22);
+        console.log(c1)
+        c1.eat();
+    </script>
+</body>
+</html>
