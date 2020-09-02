@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="top">
+            <div class="top-left">
+                <span>天津</span>
+                <button class="top-tent">切换城市</button>
+                <span>[</span>
+                <span class="top-tent">廊坊</span>
+                <span class="top-tent">香河</span>
+                <span class="top-tent">霸州</span>
+                <span>]</span>
+                <a class="user user1 active">立即登录
+                    <a class="user top-tent">注册</a>
+                </a>
+            </div>
+            <div class="top-right">
+                <ul>
+                    <li id="tent" class="top-tent header-nav">
+                        <span id="font-color1">我的美团</span>
+                        <div class=" header-nav1">
+                            <div>我的订单</div>
+                            <div>我的收藏</div>
+                            <div>抵用券</div>
+                            <div>账户设计</div>
+                        </div>
+                    </li>
+                    </li>
+                    <li id="tent" class="top-tent">手机APP</li>
+                    <li id="tent" class="top-tent header-nav">
+                        <span id="font-color2">商家中心</span>
+                        <div class="header-nav2">
+                            <div>美团餐饮商户中心</div>
+                            <div>登录商家中心</div>
+                            <div>美团智能收银</div>
+                            <div>我想合作</div>
+                            <div>手机免费开店</div>
+                            <div>餐饮代理商招募</div>
+                            <div>商家申请开票</div>
+                            <div>免费合作美团排队</div>
+                        </div>
+                    </li>
+                    <li id="tent" class="top-tent header-nav">
+                        <span id="font-color3">美团规则</span>
+                        <div class="header-nav3">
+                            <div>规则中心</div>
+                            <div>规则目录</div>
+                            <div>规则评价院</div>
+                        </div>
+                    </li>
+                    <li id="tent" class="top-tent">网站导航</li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            var topTent = document.querySelectorAll(".top-tent");
+            var headerNav_1 = document.getElementsByClassName("header-nav")[0];
+            var headerNav_2 = document.getElementsByClassName("header-nav")[1];
+            var headerNav_3 = document.getElementsByClassName("header-nav")[2];
+            var headerNav1 = document.getElementsByClassName("header-nav1")[0];
+            var headerNav2 = document.getElementsByClassName("header-nav2")[0];
+            var headerNav3 = document.getElementsByClassName("header-nav3")[0];
+            var fontColor1 = document.querySelector("#font-color1");
+            var fontColor2 = document.querySelector("#font-color2")
+            var fontColor3 = document.querySelector("#font-color3")
+            // 鼠标划入变色
+            for (var i = 0; i < topTent.length; i++) {
+                topTent[i].index = i;
+                topTent[i].onmousemove = function () {
+
+                    topTent[this.index].classList.add("active");
+                }
+                topTent[i].onmouseout = function () {
+
+                    topTent[this.index].classList.remove("active");
+                }
+            }
+
+
+            // 鼠标划入出框
+            //  111111111111111
+            headerNav_1.onmousemove = function () {
+                headerNav_1.classList.add("active1");
+                headerNav1.classList.add("active2");
+                fontColor1.classList.add("active");
+            }
+            headerNav_1.onmouseout = function () {
+                headerNav_1.classList.remove("active1");
+                headerNav1.classList.remove("active2");
+                fontColor1.classList.remove("active");
+            }
+
+
+            // 22222222222222222222222
+            headerNav_2.onmousemove = function () {
+                headerNav_2.classList.add("active1");
+                headerNav2.classList.add("active2");
+                fontColor2.classList.add("active");
+            }
+            headerNav_2.onmouseout = function () {
+                headerNav_2.classList.remove("active1");
+                headerNav2.classList.remove("active2");
+                fontColor2.classList.remove("active");
+            }
+
+            // 33333333333333333333
+            headerNav_3.onmousemove = function () {
+                headerNav_3.classList.add("active1");
+                headerNav3.classList.add("active2");
+                fontColor3.classList.add("active");
+            }
+            headerNav_3.onmouseout = function () {
+                headerNav_3.classList.remove("active1");
+                headerNav3.classList.remove("active2");
+                fontColor3.classList.remove("active");
+            }
+
+        </script>
+
+</body>
+
+</html>

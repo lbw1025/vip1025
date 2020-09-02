@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+body{
+    background-color: #f8f8f8;
+}
+
+
+/* 上方 */
+.top{
+    width: 1190px;
+    margin: 0 auto;
+    height: 40px;
+    line-height: 40px;
+}
+.top #tent{
+    padding: 2px 12px;
+}
+.top .user{
+    margin-left: 10px;
+    font-size: 12px;
+    color: #999;
+}
+.user1{
+    padding-left: 14px;
+}
+.top button{
+    font-size: 12px;
+    background-color: #F4F4F4;
+    border: 1px solid #e1e1e1;
+    color: #666;
+}
+.top li , span{
+    font-size: 12px;
+    color: #999;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+.top-left{
+    float: left;
+}
+.top-right{
+    float: right;
+    box-sizing: content-box;
+}
+.top .active{
+    color: #fe8700;
+}
+.top-right li{
+    float: left;
+    
+}
+.header-nav{
+    position: relative;
+    cursor: pointer;
+}
+.header-nav1{
+    text-align: center;
+    display: none;
+}
+.header-nav2{
+    width: 120px;
+    text-align: center;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+    position: absolute;
+    right: -1px;
+    top: 44px;
+    display: none;
+}
+.header-nav3{
+    width: 76px;
+    position: absolute;
+    background: white;
+    text-align: center;
+    right: -1px;
+    top: 100%;
+    display: none;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+
+}
+.active1{
+    background-color: white; 
+    text-align: center;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+}
+.active2{
+    display: block;
+    background:white;
+}
