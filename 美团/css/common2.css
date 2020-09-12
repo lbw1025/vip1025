@@ -261,6 +261,7 @@ body{
     left: 231px;
     top: 0;
     display: none;
+    z-index: 3000;
 }
 .container-text1{
     margin:35px 40px 0;
@@ -326,10 +327,59 @@ body{
     float: left;
     margin: 10px 0 0 10px ;
 }
-.center-container-top img{
+.center-container-top1{
+    position: relative;
+    width: 550px;
+    height: 240px;
+    box-sizing: border-box;
+    float: left;
+    cursor: pointer;
+    overflow: hidden;
+}
+.center-container-top1 ul{
+    width: 2750px;
+    height: 240px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.img-list img{
     height: 240px;
     width: 550px;
     float: left;
+}
+.center-container-top1 span{
+    font-size: 23px;
+    color: white;
+    margin: 0 10px;
+}
+.center-container-top1:hover span{
+    display: block;
+    transition: all 0.5s;
+}
+.icon-zuoyoujiantou-copy-copy-copy{
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+    text-align: center;
+    line-height: 40px;
+    top: 43%;
+    left: 0;
+    display: none;
+}
+.icon-zuoyoujiantou{
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+    text-align: center;
+    line-height: 40px;
+    top: 43%;
+    right: 0;
+    display: none;
 }
 .center-container-top2 img{
     height: 240px;
@@ -355,7 +405,25 @@ body{
     float: right;
     margin:10px 10px 0 0 
 }
-
+.slider-pagination{
+    position: absolute;
+    bottom: 38%;
+    left: 40%;
+}
+.container-pagination{
+    float: left;
+    width: 10px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.6;
+    margin: 20px 10px;
+    box-sizing: content-box;
+}
+.active4{
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+    
+}
 
 /* *******************右 */
 .right-container{

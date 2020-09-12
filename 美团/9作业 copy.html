@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/common2.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
 </head>
 
 <body>
@@ -877,7 +878,7 @@
                                 </a>
                             </div>
                             <div class="container-text2">
-        
+
                             </div>
                             <div class="container-text3">
                                 <a>医院</a>
@@ -896,7 +897,7 @@
                                 </a>
                             </div>
                             <div class="container-text2">
-        
+
                             </div>
                             <div class="container-text3">
                                 <a>洗车</a>
@@ -919,21 +920,21 @@
                                 <a>汽车改装</a>
                                 <a>汽车配件</a>
                             </div>
-                                <div class="container-text1">
-                                    <a>
-                                        宠物
-                                    </a>
-                                    <a>
-                                        更多>
-                                    </a>
-                                </div>
-                                <div class="container-text2">
-            
-                                </div>
-                                <div class="container-text3">
-                                    <a>宠物店</a>
-                                    <a>宠物医院</a>
-                                </div>
+                            <div class="container-text1">
+                                <a>
+                                    宠物
+                                </a>
+                                <a>
+                                    更多>
+                                </a>
+                            </div>
+                            <div class="container-text2">
+
+                            </div>
+                            <div class="container-text3">
+                                <a>宠物店</a>
+                                <a>宠物医院</a>
+                            </div>
                         </div>
                     </li>
 
@@ -945,7 +946,7 @@
                             <span>密室逃脱</span>
                         </div>
                         <div class="container-text">
-                            
+
                             <div class="container-text1">
                                 <a>
                                     休闲娱乐
@@ -979,13 +980,30 @@
                     </li>
                 </ul>
             </div>
+
+
             <div class="center-container">
                 <div class="center-container-top">
-                    <img src="./img/img1.jpg" alt="">
+                    <div class="center-container-top1">
+                        <ul class="img-box">
+                            <li class="img-list"><img src="./img/img1.jpg" alt=""></li>
+                            <li class="img-list"><img src="./img/img2.jpg" alt=""></li>
+                            <li class="img-list"><img src="./img/img3.jpg" alt=""></li>
+                            <li class="img-list"><img src="./img/img4.jpg" alt=""></li>
+                            <li class="img-list"><img src="./img/img5.png" alt=""></li>
+                        </ul>
+                        <div class="container-arr">
+                            <span class="iconfont icon-zuoyoujiantou-copy-copy-copy"></span>
+                            <span class="iconfont icon-zuoyoujiantou"></span>
+                        </div>
+                    </div>
+
                     <div class="center-container-top2">
                         <img src="./img/img6.jpg" alt="">
                     </div>
                 </div>
+
+
                 <div class="center-container-bottom">
                     <div class="center-container-bottom1">
                         <img src="./img/solid1.png" alt="">
@@ -995,6 +1013,24 @@
                     </div>
                     <div class="center-container-bottom3">
                         <img src="./img/solid3.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="slider-pagination">
+                    <div class="container-pagination">
+
+                    </div>
+                    <div class="container-pagination">
+
+                    </div>
+                    <div class="container-pagination">
+
+                    </div>
+                    <div class="container-pagination">
+
+                    </div>
+                    <div class="container-pagination">
+
                     </div>
                 </div>
             </div>
@@ -1589,7 +1625,7 @@
         var fontColor = document.querySelectorAll("#font-color");
         var liContainer = document.querySelectorAll(".li-container");
         var containerText = document.querySelectorAll(".container-text");
-        var containeText3 = document.querySelectorAll(".container-text3");
+
 
         // 鼠标移入变色
         for (var i = 0; i < topTent.length; i++) {
@@ -1627,7 +1663,6 @@
             liContainer[i].index = i
             liContainer[i].onmousemove = function () {
                 containerText[this.index].classList.add("active3");
-                containeText3[this.index].classList.add("active")
 
             }
             liContainer[i].onmouseout = function () {
@@ -1635,6 +1670,88 @@
             }
         }
 
+
+
+
+
+        // 轮播图**************************************
+        var timer;
+        var nextIndex = 0;
+        var nowIndex = 0;
+        var direction;
+        var isRun = true;
+        var containerPagination = document.querySelectorAll(".container-pagination")
+        var imgList = document.querySelectorAll(".img-list");
+        var imgBox = document.querySelector(".img-box");
+        var leftArr = document.querySelector(".icon-zuoyoujiantou-copy-copy-copy");
+        var rightArr = document.querySelector(".icon-zuoyoujiantou")
+
+
+        function run(index) {
+            if (!isRun) {
+                return false;
+            }
+            isRun = false;
+            
+            // 方向****************************
+            clearInterval(timer);
+            nextIndex = index
+            if (nowIndex == 5 && nextIndex == -1) {
+
+            }
+            else if (nowIndex > nextIndex) {
+                direction = 1;
+            } else if (nowIndex < nextIndex) {
+                direction = -1;
+            }
+
+            // 序号******************************
+            for (var j = 0; j < containerPagination.length; j++) {
+                containerPagination[j].classList.remove("active4")
+            }
+            containerPagination[nextIndex].classList.add("active4");
+
+
+            // 图片**************************
+            timer = setInterval(function () {
+                if (imgBox.offsetLeft == -550 * nextIndex) {
+                    clearInterval(timer);
+                    isRun = true;
+                } else {
+                    imgBox.style.left = imgBox.offsetLeft + 10 * direction + "px";
+                }
+            }, 16)
+            nowIndex = nextIndex
+        }
+
+
+
+
+        for (var i = 0; i < containerPagination.length; i++) {
+            containerPagination[i].index = i;
+
+            containerPagination[i].onmousemove = function () {
+                nextIndex = this.index
+                run(nextIndex);
+                nowIndex = nextIndex
+            }
+        }
+
+
+
+        // 左****************
+        leftArr.onclick = function () {
+            run(nowIndex - 1)
+            console.log("aa")
+            console.log(nowIndex)
+        }
+
+        // 右*******************
+        rightArr.onclick = function () {
+            run(nowIndex + 1)
+            console.log("aa")
+            console.log(nowIndex)
+        }
 
 
     </script>
