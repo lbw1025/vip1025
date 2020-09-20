@@ -1,0 +1,115 @@
+.box{
+    height: 50px;
+    background-color: black;
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+}
+.location-box{
+    width:2.42rem;
+    overflow: hidden;
+    line-height: 50px;
+    margin: 0 10px 0 8px;
+}
+.search-box{
+    height: 30px;
+    border-radius: 15px;
+    flex: 1;
+    background-color: #ebebe4; 
+    margin: 10px 10px 0 0 ;  
+}
+.search-box span{
+    float: left;
+    margin: 5px 4px 5px 8px;
+    color:#1C1B20;
+    line-height: 22px;
+}
+.search-box input{
+    float: left;
+    height: 30px;
+    width:2.42rem;
+    border: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #ebebe4; 
+}
+.cate-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+.cate-box li{
+    width: 20%;
+    color: #333333;
+    font-size: 11px;
+    text-align: center;
+}
+.cate-box img{
+    width: 44px;
+    height: 44px;
+    margin: 15px 0 0 0;
+}
+.cate-box div{
+    margin: 3px 0 0 0;
+}
+
+/* ******************商家 */
+.store-title{
+    text-align: center;
+    height: 0.46rem;
+    line-height: 0.46rem;
+    color: #333;
+    font-size: 17px;
+    margin: 0.3rem 0 0.08rem 0;
+}
+.store-title::before,.store-title::after{
+    content: "";
+    display: inline-block;
+    width: 33px;
+    height: 1px;
+    background: #666;
+    vertical-align: middle;
+    transform: scaleY(0.5);
+}
+
+/* type************** */
+.store-list-box{
+    display: flex;
+    margin: 0.2rem 0.2rem 0.5rem;
+}
+.img-box img{
+    width:1.52rem;
+    height:1.14rem;
+}
+.info-box span{
+    font-size: 11px;
+    color: #333333;
+    font-family: mtsi-font;
+}
+.store-list{
+    padding-left:10px ;
+}
+.store-list-text{
+    font-size: 16px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.info-box .store-list-star{
+    font-size: 5px;
+}
+.store-list-offer{
+    margin: 0 0 0 5px;
+}
+.store-list-sgin::after{
+    content: "";
+    display: inline-block;
+    margin: 0 3px;
+    width: 0.02rem;
+    height: 0.12rem;
+    background-color: #cccccc;
+}
+
+.store-list-box2{
+    font-size: 11px;
+    
+}
