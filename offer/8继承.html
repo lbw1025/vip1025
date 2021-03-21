@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        };
+        Person.prototype.eat=function(){
+            console.log('吃');
+        }
+        function Coder(name,age){
+            Person.call(this,name,age);
+        }
+        Coder.prototype =new Person();
+        var c1 =new Coder("阿文",18);
+        console.log(c1);
+        c1.eat();
+    </script>  
+</body>
+</html>

@@ -1,7 +1,7 @@
 <template>
   <div class="bs-wrapper">
     <div class="bs-content">
-        <detailHead></detailHead>
+        <detailHead :storeMsg="storeMsg"></detailHead>
         <van-tabs v-model="active" animated sticky color="#ffb000">
           <van-tab :title="'点餐'">
             <!-- 点餐页 -->
@@ -17,7 +17,10 @@
           </van-tab>
         </van-tabs>
       </div>
-    </div>
+
+        <!-- 购物车 -->
+          <Cart v-if="active ==0 " :storeMsg="storeMsg"></Cart>
+    </div> 
 </template>
 
 <script>
@@ -26,10 +29,13 @@ import Comment from "@/views/comment/index";
 import BetterScroll from "better-scroll";
 import Store from "@/views/store/index";
 import Order from "@/views/order/index";
+import Cart from "./../cart"
+import axios from "axios"
 export default {
   data() {
     return {
       active: 0,
+      storeMsg:""
     };
   },
   components: {
@@ -37,6 +43,7 @@ export default {
     Comment,
     Store,
     Order,
+    Cart,
   },
    mounted() {
     setTimeout(() => {
@@ -45,6 +52,14 @@ export default {
         bounce:false
       });
     },1000);
+
+    // 请求商家数据
+    axios.get('http://admin.gxxmglzx.com/tender/test/get_store_id?id='+this.$route.query.id)
+    .then(res=>{
+        this.storeMsg =res.data.data;
+    }).catch(err=>{
+      console.log(err)
+    })
   }
 };
 </script>
@@ -54,4 +69,5 @@ export default {
         height: 100vh;
         overflow: hidden;
     }
+   
 </style>
