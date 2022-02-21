@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function promiseAll(promise)
+        {
+            return new Promise((resovle,reject) =>{
+                let count = 0
+                let len = promise.length;
+                let res = new Array(len);
+            
+                for(let i = 0; i< len; i++){
+                  promise[i].then(value=>{
+                    count ++;
+                    res[i] = value
+                    if(count === len){
+                        return resovle(res)
+                    }
+                  }) ,error =>{
+                    reject(error)
+                  }
+                }
+
+
+            })
+        }
+         
+    </script>
+</body>
+</html>

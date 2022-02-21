@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('global')
+
+        for (var i = 1; i <= 5; i++) {
+            setTimeout(function () {
+                console.log(i)
+            }, i * 1000)
+            console.log(i)
+        }
+
+        new Promise(function (resolve) {
+            console.log('promise1')
+            resolve()
+            console.log('promise2')
+        }).then(function () {
+            console.log('then1')
+        }).finally(() => {
+            console.log('finally')
+        })
+
+        setTimeout(function () {
+            console.log('timeout2')
+            new Promise(function (resolve) {
+                console.log('timeout2_promise')
+                resolve()
+            }).then(function () {
+                console.log('timeout2_then')
+            })
+        }, 1000)
+
+
+        global  1 1 1 1 1  6 6 6 6 6   
+        promise1  promise2 then1 finally
+        timeout2  timeout2_promise timeout2_then
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var  resver = function(head){
+            if (head === undefined || head === null){
+                return null
+            }
+            var head1 = head 
+            var resverHead
+            var resver2 = function(head){
+                if(head.next === null){
+                    resverHead = head
+                    return head
+                }else{
+                    var node = resver2(head.next)
+                    node.next = head
+                    if (head1 === head){
+                        head.next = null
+                        return resverHead
+                    }else{
+                        return head
+                    }
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

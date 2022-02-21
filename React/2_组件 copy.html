@@ -18,11 +18,13 @@
             <div>
                 <div>{props.title}</div>
                 <p>{props.name}</p>
+                <p>{props.children}</p>
             </div>
         )
         }
         ReactDOM.render(
-            <Hello title="标题" name="名字"/>,
+            <Hello title="标题" name="名字"> 
+                <h3>子元素</h3> </Hello>,
             document.getElementById("root")
         )
     </script>

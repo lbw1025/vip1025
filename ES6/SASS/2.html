@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let result = [],
+        function unidi(arr){
+            for(let item of arr){
+                if(Object.prototype.toString.call(item).slice()=== 'Array')
+            {
+                unidi(arr);
+            }else{
+               result.push(item)
+            }
+    
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
